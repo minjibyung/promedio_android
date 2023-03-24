@@ -26,23 +26,26 @@ class MainActivity : AppCompatActivity() {
         val campoNota2:EditText?=findViewById(R.id.idNota2)
         val campoNota3:EditText?=findViewById(R.id.idNota3)
 
+
         val name = campoTexto?.text.toString()
         val subject = campoMateria1?.text.toString()
-
-
-
-        val intent = Intent(this,ActivityMensage::class.java)
-        val miBundle:Bundle= Bundle()
-        miBundle.putString("Nombre",name)
-        miBundle.putString("Materia",subject)
-        intent.putExtras(miBundle)
-        startActivity(intent)
-
         val nota1:Double= campoNota1?.text.toString().toDouble()
         val nota2:Double= campoNota2?.text.toString().toDouble()
         val nota3:Double= campoNota3?.text.toString().toDouble()
 
+        val intent = Intent(this,ActivityMensage::class.java)
+        val miBundle:Bundle= Bundle()
         val prom:Double=(nota1+nota2+nota3)/3
+
+        miBundle.putString("Nombre",name)
+        miBundle.putString("Materia",subject)
+        miBundle.putDouble("Nota1",nota1)
+        miBundle.putDouble("Nota2",nota2)
+        miBundle.putDouble("Nota3",nota3)
+        miBundle.putDouble("Promedio",prom)
+        intent.putExtras(miBundle)
+        startActivity(intent)
+
         println("El promedio de notas es de: "+prom)
 
         if (prom>=3.5){
@@ -50,7 +53,7 @@ class MainActivity : AppCompatActivity() {
         }else {
             println("EL ESTUDIANTE $name PERDIO LA MATERIA DE $subject CON UNA NOTA DE: " + prom)
         }
-    Toast.makeText(this,"Hello $name",Toast.LENGTH_LONG).show()
+    Toast.makeText(this,"Bienvenid@ $name",Toast.LENGTH_LONG).show()
     }
 
     }
