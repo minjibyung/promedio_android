@@ -20,9 +20,9 @@ class ActivityMensage : AppCompatActivity() {
                     "Las notas a validar son: Nota 1: ${miBundle.getDouble("Nota1")}\n" +
                     "Nota 2: ${miBundle.getDouble("Nota2")}\n" +
                     "Nota 3: ${miBundle.getDouble("Nota3")}\n" +
-                    "Y su promedio de notas es de: ${miBundle.getDouble("Promedio")}"
+                    "Y su promedio de notas es de: ${miBundle.getDouble("Promedio")}\n"
         }
-val botonSalir:Button=findViewById(R.id.btnSalir)
+        val botonSalir:Button=findViewById(R.id.btnSalir)
         botonSalir.setOnClickListener { onClick() }
         }
 
