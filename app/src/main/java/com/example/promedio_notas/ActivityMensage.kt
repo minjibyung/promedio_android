@@ -1,5 +1,6 @@
 package com.example.promedio_notas
 
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -10,9 +11,10 @@ class ActivityMensage : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_mensage)
 
-        val campoMensaje=findViewById<TextView>(R.id.txtMensaje)
+        val campoMensaje = findViewById<TextView>(R.id.txtMensaje)
+        val mensajeAR = findViewById<TextView>(R.id.idmessage)
 
-        val miBundle: Bundle? =this.intent.extras
+        val miBundle: Bundle? = this.intent.extras
 
         if (miBundle != null) {
             campoMensaje.text = "Hola ${miBundle.getString("Nombre")} Bienvenid@\n" +
@@ -22,6 +24,14 @@ class ActivityMensage : AppCompatActivity() {
                     "Nota 3: ${miBundle.getDouble("Nota3")}\n" +
                     "Y su promedio de notas es de: ${miBundle.getDouble("Promedio")}\n"
         }
+        if (miBundle?.getString("prom")!!>=3.5.toString()) {
+            mensajeAR.text="${miBundle.getString("message1")}\n"
+            mensajeAR.setTextColor(Color.parseColor("#ffffff"))
+        }else{
+            mensajeAR.text="${miBundle.getString("message1")}\n"
+            mensajeAR.setTextColor(Color.LTGRAY)
+        }
+
         val botonSalir:Button=findViewById(R.id.btnSalir)
         botonSalir.setOnClickListener { onClick() }
         }

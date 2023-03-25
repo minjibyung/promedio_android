@@ -37,23 +37,27 @@ class MainActivity : AppCompatActivity() {
         val miBundle:Bundle= Bundle()
         val prom:Double=(nota1+nota2+nota3)/3
 
+        var message: String? = null
+
+
+
+        if (prom>=3.5){
+            message = "El estudiante aprobo"
+        }else {
+            message = "El estudiante no aprobo"
+        }
+
         miBundle.putString("Nombre",name)
         miBundle.putString("Materia",subject)
         miBundle.putDouble("Nota1",nota1)
         miBundle.putDouble("Nota2",nota2)
         miBundle.putDouble("Nota3",nota3)
         miBundle.putDouble("Promedio",prom)
+        miBundle.putString("message1",message)
         intent.putExtras(miBundle)
         startActivity(intent)
 
-        println("El promedio de notas es de: "+prom)
 
-        if (prom>=3.5){
-            println("EL ESTUDIANTE $name GANO LA MATERIA DE $subject CON UNA NOTA DE: "+prom)
-        }else {
-            println("EL ESTUDIANTE $name PERDIO LA MATERIA DE $subject CON UNA NOTA DE: " + prom)
-        }
-    Toast.makeText(this,"Bienvenid@ $name",Toast.LENGTH_LONG).show()
     }
 
     }
