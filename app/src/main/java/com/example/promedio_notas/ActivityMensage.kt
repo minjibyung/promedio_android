@@ -18,7 +18,7 @@ class ActivityMensage : AppCompatActivity() {
 
 
         if(miBundle != null){
-            campoMensaje.text="Alumno: ${miBundle.getString("Nombre")} \nMateria: ${miBundle.getString("Materia")} \n\nSus notas: \nNota 1:  ${miBundle.getDouble("Nota1")} \nNota 2: ${miBundle.getDouble("Nota2")} \nNota 3:  ${miBundle.getDouble("Nota3")} \n\nPromedio: ${miBundle.getString("Promedio")} \n\nEl estado es: "
+            campoMensaje.text="Hola bienvenid@ ${miBundle.getString("Nombre")} \nLa materia a validar es: ${miBundle.getString("Materia")} \n\nLas notas a validar son: \nNota 1:  ${miBundle.getDouble("Nota1")} \nNota 2: ${miBundle.getDouble("Nota2")} \nNota 3:  ${miBundle.getDouble("Nota3")} \n\nY el promedio es: ${miBundle.getString("Promedio")} \n\nEl estudiante esta: "
 
         }
         //Pintar texto

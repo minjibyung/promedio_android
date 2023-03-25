@@ -47,11 +47,11 @@ class MainActivity : AppCompatActivity() {
         val content: Bundle = Bundle()
         content.putString("Nombre", name)
         content.putString("Materia", subject)
-        content.putDouble("Promedio", formattedAverage)
+        content.putString("Promedio", formattedAverage)
         content.putDouble("Nota1",nota1)
         content.putDouble("Nota2",nota2)
         content.putDouble("Nota3",nota3)
-        content.putString("message1",message)
+        content.putString("message",message)
 
         intent.putExtras(content)
         startActivity(intent)
